@@ -5,3 +5,4 @@ _exclude:
   - copier.yml
   - README.md
   - .git
+  - .gitignore
