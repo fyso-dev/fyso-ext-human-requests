@@ -1,0 +1,10 @@
+description: Expire overdue human requests
+type: graph
+schedule: "*/5 * * * *"
+# 2.24.0 defaults to six hours and rejects zero; bound missed runs to one tick.
+catchup_window: "1m"
+overlap_policy: skip
+working_dir: ${FYSO_ROOT}
+steps:
+  - id: sweep
+    command: node extensions/human-requests/sweep.cjs
