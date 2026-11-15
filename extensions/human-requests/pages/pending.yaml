@@ -1,0 +1,8 @@
+name: {es: Pendientes, en: Pending}
+icon: checklist
+url: /extensions/human-requests/panel/index.html
+# The panel counts these runs next to the menu entry and in its top bar.
+badge:
+  dagu_runs: {status: waiting, labels: [human-request]}
+  warn_labels: [blocking=true]
+  attention: true

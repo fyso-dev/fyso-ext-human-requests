@@ -1,0 +1,73 @@
+.pending-page { max-width: 1120px; margin: auto; padding: 32px 28px 48px; }
+.pending-header h1 { margin-bottom: 8px; }
+.pending-header p { max-width: 620px; line-height: 1.55; }
+.pending-toolbar { display: flex; gap: 14px; flex-wrap: wrap; align-items: end; margin: 24px 0 20px; }
+.pending-toolbar label, .pending-field { display: grid; gap: 7px; }
+.pending-scope, .pending-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.pending-inbox { display: grid; grid-template-columns: minmax(240px, 340px) minmax(0, 1fr); gap: 18px; align-items: start; }
+.pending-list { display: grid; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.pending-row { width: 100%; display: grid; gap: 5px; text-align: left; padding: 12px 14px; border: 1px solid var(--fy-border, #aaa); border-radius: 10px; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.pending-row[aria-current="true"] { border-color: var(--fy-accent, currentColor); box-shadow: inset 3px 0 0 var(--fy-accent, currentColor); }
+.pending-row:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.pending-row strong { overflow-wrap: anywhere; line-height: 1.35; }
+.pending-row-who { display: flex; justify-content: space-between; gap: 10px; font-size: .82rem; opacity: .75; }
+.pending-row-meta { font-size: .82rem; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.pending-pane { padding: 24px; min-width: 0; }
+.pending-detail { display: grid; gap: 18px; }
+.pending-detail h2 { margin: 4px 0 0; overflow-wrap: anywhere; }
+.pending-asker { margin: 0; font-size: .88rem; opacity: .8; }
+.pending-facts { display: grid; grid-template-columns: minmax(120px, 170px) minmax(0, 1fr); gap: 8px 16px; margin: 0; }
+.pending-facts dt { opacity: .75; }
+.pending-facts dd { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }
+.pending-links { display: flex; gap: 14px; flex-wrap: wrap; margin: 0; }
+.pending-thread { display: grid; gap: 8px; }
+.pending-thread h3 { margin: 0 0 2px; font-size: 1rem; }
+.pending-msg { max-width: 560px; padding: 9px 12px; border: 1px solid var(--fy-border, #aaa); border-radius: 10px; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.45; }
+.pending-msg small { display: block; font-size: .78rem; opacity: .7; margin-bottom: 2px; }
+.pending-msg-me { justify-self: end; }
+.pending-respond { display: grid; gap: 14px; border-top: 1px solid var(--fy-border, #aaa); padding-top: 18px; }
+.pending-fields { display: grid; gap: 16px; max-width: 640px; }
+.pending-fields input[type="text"], .pending-fields input[type="number"], .pending-fields textarea, .pending-fields select, .pending-toolbar input, .pending-toolbar select { width: 100%; padding: 10px; border: 1px solid var(--fy-border, #aaa); border-radius: 8px; background: transparent; color: inherit; font: inherit; }
+.pending-options { display: grid; gap: 8px; border: 0; padding: 0; margin: 0; }
+.pending-options legend { font-weight: 600; margin-bottom: 8px; padding: 0; }
+.pending-option { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border: 1px solid var(--fy-border, #aaa); border-radius: 10px; cursor: pointer; }
+.pending-option.is-chosen { border-color: var(--fy-accent, currentColor); }
+.pending-option span { display: grid; gap: 2px; }
+.pending-option em { font-style: normal; font-size: .8rem; font-weight: 600; color: var(--fy-accent, inherit); }
+.pending-option small { opacity: .8; line-height: 1.4; }
+.pending-actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.pending-note { margin: 0; font-size: .86rem; opacity: .75; line-height: 1.45; }
+.pending-prompt { white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }
+.pending-result { padding: 14px 16px; border: 1px solid var(--fy-border, #aaa); border-radius: 8px; line-height: 1.5; }
+.pending-result p { margin: 0; }
+.pending-result p + p { margin-top: 8px; }
+.pending-history { margin-top: 36px; }
+.pending-history-note { line-height: 1.5; opacity: .8; }
+.pending-history-list { list-style: none; padding: 0; display: grid; gap: 10px; }
+.pending-history-item { border: 1px solid var(--fy-border, #aaa); border-radius: 10px; }
+.pending-history-item summary { cursor: pointer; padding: 14px 16px; }
+.pending-history-title { display: block; margin-bottom: 5px; overflow-wrap: anywhere; }
+.pending-history-item summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.pending-history-detail { padding: 0 16px 14px; display: grid; gap: 10px; }
+.pending-history-outputs dt { font-weight: 600; margin-top: 12px; }
+.pending-history-outputs dd { margin: 4px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.pending-empty { padding: 24px; border: 1px solid var(--fy-border, #aaa); border-radius: 12px; }
+.pending-empty p { margin: 0 0 6px; font-weight: 600; }
+.pending-empty span, .pending-footer { opacity: .75; }
+.pending-footer { margin-top: 32px; font-size: .88rem; line-height: 1.5; }
+.pending-footer a { display: inline-block; margin-top: 4px; }
+.people-page { max-width: 760px; margin: auto; padding: 32px 28px 48px; display: flex; flex-direction: column; gap: 18px; }
+.people-page > .btn { align-self: flex-start; }
+.people-list { display: grid; gap: 10px; list-style: none; margin: 0; padding: 0; }
+.people-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px; }
+.people-row small { display: block; overflow-wrap: anywhere; margin-top: 4px; opacity: .7; }
+.people-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.people-editor { display: grid; gap: 12px; padding: 20px; }
+.people-editor input { width: 100%; padding: 10px; border: 1px solid var(--fy-border, #aaa); border-radius: 8px; background: transparent; color: inherit; font: inherit; }
+@media (max-width: 820px) {
+  .pending-page, .people-page { padding: 20px 16px 32px; }
+  .pending-inbox { grid-template-columns: minmax(0, 1fr); }
+  .pending-pane { padding: 18px; }
+  .pending-facts { grid-template-columns: minmax(0, 1fr); gap: 2px 0; }
+  .pending-facts dd { margin-bottom: 10px; }
+}
