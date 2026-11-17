@@ -3,6 +3,7 @@ _answers_file: .copier-answers.ext-human-requests.yml
 _templates_suffix: .slotjinja
 _exclude:
   - copier.yml
+  - LICENSE
   - README.md
   - .git
   - .gitignore
