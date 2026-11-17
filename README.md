@@ -41,3 +41,9 @@ An installation from the framework's bundled directory (`./framework/extensions/
 ```sh
 mise run ext:add gh:fyso-dev/fyso-ext-human-requests -- --defaults --overwrite --vcs-ref v0.1.0
 ```
+
+## License
+
+Copyright (C) 2026 Fyso.
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, version 3 (`AGPL-3.0-only`). It is distributed WITHOUT ANY WARRANTY; see [LICENSE](LICENSE) for the full text.
