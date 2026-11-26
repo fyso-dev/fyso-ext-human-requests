@@ -1,0 +1,29 @@
+name: test
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check syntax
+        run: |
+          for f in extensions/human-requests/*.cjs; do node --check "$f"; done
+          for f in extensions/human-requests/panel/locales/*.json; do node -e 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"))' "$f"; done
+      - name: Locales have the same keys
+        run: |
+          node -e '
+            const keys = (o, p = "") => Object.entries(o).flatMap(([k, v]) => v && typeof v === "object" ? keys(v, p + k + ".") : [p + k]).sort();
+            const load = l => keys(JSON.parse(require("fs").readFileSync(`extensions/human-requests/panel/locales/${l}.json`, "utf8")));
+            const es = load("es"), en = load("en");
+            const diff = es.filter(k => !en.includes(k)).concat(en.filter(k => !es.includes(k)));
+            if (diff.length) { console.error("Locale key mismatch:", diff); process.exit(1); }'
+      - name: Unit tests
+        run: node --test tests/*.test.mjs

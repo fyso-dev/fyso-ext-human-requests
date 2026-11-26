@@ -69,6 +69,8 @@ const assignee = run => labelsOf(run).find(label => label.startsWith('assignee='
 const deadline = run => { const value = labelsOf(run).find(label => /^deadline=\d{1,12}$/.test(label)); return value ? Number(value.slice(9)) * 1000 : 0; };
 const personId = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 // The directory is optional; absence or a failed read must not hide requests.
+// Only `version` and `name` are read: extra fields (such as `source` and `biz_id`
+// on records synced from Fyso Biz) are ignored.
 async function listPeople() {
   const people = [];
   for (let page = 1; page <= 100; page++) {

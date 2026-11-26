@@ -31,7 +31,7 @@ Use the Dagu MCP to start the root workflow `ext-human-requests-request` with a 
 
 Run labels carry what lists and validation read. They accept only `a-z A-Z 0-9 - _ . /`, are visible in run lists and must hold nothing sensitive:
 
-- `assignee=<recipient>`: `team`, or a person's stable ID. Look the person up in the Dagu wiki under `fyso-people/` and use the UUID; a name with accents or spaces is not a valid label.
+- `assignee=<recipient>`: `team`, or a person's stable ID. Look the person up in the Dagu wiki under `fyso-people/` and use the UUID; a name with accents or spaces is not a valid label. When the project is connected to Fyso Biz, that directory also mirrors the people with access to the Biz project (records with `"source":"biz"`); their IDs work the same way, and they are managed in Fyso Biz, not here.
 - `blocking=true` when `BLOCKING` is `"true"`. It is what the panel's counter highlights.
 - `deadline=<Unix seconds>` for an expiry, at most one.
 - `choices-hex=<hex>` when you give `options`: the JSON array of the `choice` strings, in the same order, as lowercase hexadecimal UTF-8. It is the authority answers are checked against, and the request is refused if it differs from `options`.
