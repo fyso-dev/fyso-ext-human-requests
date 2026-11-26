@@ -62,6 +62,7 @@
 .people-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 16px; }
 .people-row small { display: block; overflow-wrap: anywhere; margin-top: 4px; opacity: .7; }
 .people-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.people-managed { font-size: .85rem; padding: 4px 10px; border: 1px solid var(--fy-border, #aaa); border-radius: 999px; opacity: .8; }
 .people-editor { display: grid; gap: 12px; padding: 20px; }
 .people-editor input { width: 100%; padding: 10px; border: 1px solid var(--fy-border, #aaa); border-radius: 8px; background: transparent; color: inherit; font: inherit; }
 @media (max-width: 820px) {

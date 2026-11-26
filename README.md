@@ -3,13 +3,17 @@
 Copier extension for Dagu human tasks, published independently from the Fyso Agentic Framework. Versions are the Git tags of this repository, starting at **v0.1.0**. From a generated project:
 
 ```sh
-mise run ext:add gh:fyso-dev/fyso-ext-human-requests -- --defaults --vcs-ref v0.1.0
+mise run ext:add gh:fyso-dev/fyso-ext-human-requests -- --defaults --vcs-ref v0.2.0
 mise run doctor
 ```
 
 Enable the `human-requests` skill per bot in the panel. No extra service, port, or secret is required.
 
 This is a beta. In isolated tests, a real bot created a request through Dagu 2.24.0, a second browser session answered through the authenticated gateway, and the answer returned to the same OpenMausBot conversation. A stopped-server retry was tested with a single fictional effect; the normal generated-stack lifecycle is not yet verified for that experiment. A saved answer is checked against the run's choices before delivery, including for API callers. Dagu stores the answer before this validation: an invalid submission cannot be corrected in place and needs a new request. See the skill for the creation contract.
+
+## People directory and Fyso Biz
+
+The **People** page keeps a descriptive directory as Dagu wiki pages `fyso-people/<uuid>` with content `{"version":1,"name":"..."}`. When the project is connected to Fyso Biz, the [fyso-ext-biz](https://github.com/fyso-dev/fyso-ext-biz) extension fills it with the people who have access to the Biz project; those records also carry `"source":"biz"` and `"biz_id"`. They are shown read-only with a "Managed by Fyso Biz" label, and the page refuses to edit or remove them, even if a record became managed after the list was loaded. Manual people can still be added, edited and removed. This extension never writes `source` or `biz_id`; readers ignore fields they do not use.
 
 ## Bot setup (scoped Dagu access)
 
@@ -39,8 +43,16 @@ mise run doctor
 An installation from the framework's bundled directory (`./framework/extensions/human-requests`) has no `_commit` and cannot be updated that way. Commit pending project changes, then migrate it once to this source; existing answers are reused:
 
 ```sh
-mise run ext:add gh:fyso-dev/fyso-ext-human-requests -- --defaults --overwrite --vcs-ref v0.1.0
+mise run ext:add gh:fyso-dev/fyso-ext-human-requests -- --defaults --overwrite --vcs-ref v0.2.0
 ```
+
+## Development
+
+```sh
+node --test tests/
+```
+
+CI runs these tests, a syntax check of the workflow scripts and a check that both locales have the same keys. Changes are listed in [CHANGELOG.md](CHANGELOG.md); a release is a tag on `main`.
 
 ## License
 

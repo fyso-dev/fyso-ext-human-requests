@@ -122,6 +122,9 @@
     "saved": "Cambios guardados.",
     "id": "Identificador",
     "removeYes": "Sí, eliminar",
-    "retry": "Reintentar"
+    "retry": "Reintentar",
+    "managed": "Administrado por Fyso Biz",
+    "bizNote": "Las personas con acceso al proyecto en Fyso Biz aparecen aquí automáticamente y se administran allí. También podés agregar otras personas a mano.",
+    "locked": "Esta persona se administra en Fyso Biz y no se puede modificar desde aquí. Actualizá la lista."
   }
 }

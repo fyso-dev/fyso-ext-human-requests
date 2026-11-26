@@ -7,3 +7,6 @@ _exclude:
   - README.md
   - .git
   - .gitignore
+  - .github
+  - tests
+  - CHANGELOG.md
