@@ -49,7 +49,7 @@ mise run ext:add gh:fyso-dev/fyso-ext-human-requests -- --defaults --overwrite -
 ## Development
 
 ```sh
-node --test tests/
+node --test tests/*.test.mjs
 ```
 
 CI runs these tests, a syntax check of the workflow scripts and a check that both locales have the same keys. Changes are listed in [CHANGELOG.md](CHANGELOG.md); a release is a tag on `main`.
